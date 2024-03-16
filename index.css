@@ -1,0 +1,290 @@
+.body {
+    font-family: sans-serif;
+    margin: 0;
+}
+body,html {
+    margin: 0;  /* 解決するため */
+    padding: 0; /* 入れておくと無難 */
+}
+
+header {
+    margin: auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:linear-gradient(135deg, #766cff 0%,#88f1f7 100%);
+    text-align: center;
+    padding: 18px;
+    margin: 0;
+}
+header h1 {
+    font-size: 2.0rem;
+    margin: 0;
+    margin-left: 20px;
+}
+header h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+#header.fixed{
+    position: fixed;/*fixedを設定して固定*/
+      z-index: 999;/*最前面へ*/
+      top:0;/*位置指定*/
+      left:0;/*位置指定*/
+}
+
+
+/*=============レイアウトのためのCSS=============*/
+  
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px;  
+}
+nav ul li a {
+    display: block;
+  text-decoration: none;
+  color: #666;
+  padding: 25px;
+  transition:all 0.3s;
+  font-size: 1.2rem;
+}
+
+nav ul li.current a,
+nav ul li a:hover{
+  color:#fff; 
+}
+
+#area-1 {
+  align-items: center;
+}
+#area-1 img {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+
+}
+#area-1_article img {
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+}
+#area-1_article p {
+  text-align: center;
+}
+#area-1 h2{
+    display: inline-block;
+}
+#area-1 p { 
+    text-align: center;
+}
+
+#area-2-home {
+  margin: 30px;
+}
+#area-3 img {
+  width: 40%;
+}
+#catchcopy {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+.content-link ul {
+  list-style: none;
+}
+.gradient1{
+  /*ボタンの形状*/
+  display: inline-block;
+  color:#fff;
+  padding: 18px 60px;
+  margin-top: 10px;
+  margin-bottom: 10px ;
+  border-radius:30px;
+  text-decoration: none;
+  outline: none;
+  /*背景の色と形状*/
+  background: linear-gradient(270deg, #88f1f7 25%,  #766cff 100%);
+  background-position: 1% 50%;
+  background-size: 200% auto;
+  /*アニメーションの指定*/
+  transition: all 0.3s ease-out;
+}
+
+/*hoverした際の、背景の場所とテキスト色の変更*/
+.gradient1:hover {
+  color: #fff;
+  background-position: 99% 50%;
+}
+section {
+    padding:30px;
+}
+
+section:nth-child(2n){
+    background:#f3f3f3; 
+  }
+
+footer {
+    height: 50px;
+    background-color: #666;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}  
+
+@media screen and (min-width: 480px) {
+    .header-area {display: none;}
+    .slide-menu {display: none;}
+    .content{
+      width: 50%;
+    }
+    .content-home{
+      width: 33%;
+    }
+    .content-link{
+      width: 33%;
+    }
+    .area-2 {
+      display: flex;
+    }
+
+    #area-3{
+      display: flex;
+    }
+}
+@media screen and (max-width: 480px){
+    .menu {display: none;}
+    .area-2 
+    .header-area{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .hamburger{
+        width: 40px;
+        height: 25px;
+        position: relative;
+        position: fixed;
+      }
+      .hamburger span{
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        transition: .5s;
+      }
+      .hamburger span:first-of-type{/* ハンバーガーメニューの1番目の線 */
+        top: 0;
+      }
+      .hamburger span:nth-of-type(2){/* ハンバーガーメニューの2番目の線 */
+        top: 50%;
+      }
+      .hamburger span:last-of-type{/* ハンバーガーメニューの3番目の線 */
+        top: 100%;
+      }
+      .slide-menu{
+        background-color: rgba(0, 0, 0, .8);
+        position: fixed;
+        top: 65px;
+        width: 100%;
+        left: 0;
+        transition: .5s;
+      }
+      .slide-menu li {
+        list-style: none;
+      }
+      .slide-menu li a{
+        color: #fff;
+        line-height: 400%;
+        text-align: center;
+        padding-right: 80px;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+      body{
+        overflow-x: hidden;/* 追記 */
+      }
+      .header-area{
+        display: flex;
+        justify-content: space-between;
+        height: 65px;
+        margin-right: 20px;
+        align-items: center;
+      }
+      .hamburger{
+        width: 40px;
+        height: 25px;
+        position: relative;
+      }
+      .hamburger span{
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+      }
+      .hamburger span:first-of-type{/* ハンバーガーメニューの1番目の線 */
+        top: 0;
+      }
+      .hamburger span:nth-of-type(2){/* ハンバーガーメニューの2番目の線 */
+        top: 50%;
+      }
+      .hamburger span:last-of-type{/* ハンバーガーメニューの3番目の線 */
+        top: 100%;
+      }
+      .slide-menu{
+        background-color: rgba(0, 0, 0, .8);
+        position: fixed;
+        top: 65px;
+        width: 100%;
+        left: 0;
+        transform: translateX(100%); /* 追記 */
+      }
+      .slide-menu li{
+        color: #fff;
+        line-height: 400%;
+        text-align: center;
+      }
+      .hamburger.active span:first-of-type{/* ハンバーガーメニューの1番目の線 */
+        top: 50%;
+        transform: rotate(45deg);
+      }
+      .hamburger.active span:nth-of-type(2){/* ハンバーガーメニューの2番目の線 */
+        opacity: 0;/* 透明にする */
+      }
+      .hamburger.active span:last-of-type{/* ハンバーガーメニューの3番目の線 */
+        top: 50%;
+        transform: rotate(-45deg);
+      }
+      .slide-menu.active{
+        transform: translateX(0); 
+      }
+
+      #area-1 img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+      header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        margin-left: 20px;
+      }
+      #area-3 img {
+        width: 60%;
+      }
+      #area-2 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: column;
+      }
+      .content {
+        width: 100%;
+        justify-content: center;
+      }
+      #area-2 img {
+        width: 70%;
+      }
+}
